@@ -106,19 +106,19 @@ for L in ${L_LIST[@]}; do
     --max_target_epoch ${TARGET_EPOCH}\
     --c_type "zero_one"
 
-  python src/adv.py \
-    --save_freq 100 \
-    --save_freq_adv 50 \
-    --dim_z ${D} \
-    --n_hidden 64 \
-    --num_epochs 251 \
-    --batch_size 1024 \
-    --experiment_name "grid_navib" \
-    --latent_and_label_data_path "corrected_out_evals/adult/l${L}_b${B}_d${D}/"\
-    --learn_rate 0.001 \
-    --eval_output "corrected_out_evals/adult/l${L}_b${B}_d${D}/old_adv_err.tsv" \
-    --max_target_epoch ${TARGET_EPOCH}\
-    --c_type "old_zero_one"
+  #python src/adv.py \
+  #  --save_freq 100 \
+  #  --save_freq_adv 50 \
+  #  --dim_z ${D} \
+  #  --n_hidden 64 \
+  #  --num_epochs 251 \
+  #  --batch_size 1024 \
+  #  --experiment_name "grid_navib" \
+  #  --latent_and_label_data_path "corrected_out_evals/adult/l${L}_b${B}_d${D}/"\
+  #  --learn_rate 0.001 \
+  #  --eval_output "corrected_out_evals/adult/l${L}_b${B}_d${D}/old_adv_err.tsv" \
+  #  --max_target_epoch ${TARGET_EPOCH}\
+  #  --c_type "old_zero_one"
 
 done
 done

@@ -89,11 +89,12 @@ def ffd(z, c, n_hidden, n_output, keep_prob, output_type=None,\
     )
   elif output_type == "zero_one":
     loss = \
+      tf.losses.log_loss( labels=c, predictions=c_hat,\
+        reduction=tf.losses.Reduction.MEAN)
+  elif output_type == "old_zero_one" or output_type == "abs":
+    loss = \
       tf.losses.absolute_difference( labels=c, predictions=c_hat,\
         reduction=tf.losses.Reduction.MEAN)
-    #loss = \
-    #  tf.losses.log_loss( labels=c, predictions=c_hat,\
-    #    reduction=tf.losses.Reduction.MEAN)
   elif output_type == "scalar":
     loss = \
       tf.losses.mean_squared_error( labels=c, predictions=c_hat,\
